@@ -1,4 +1,4 @@
-# Sharepoint-con
+# Sharepointing
 A library to establish connection to sharepoint. Then operate on this connection. Right now it's only possible to upload files.
 
 This library depends on office 365 library, and it will use active directory authentication to connect to SharePoint.
