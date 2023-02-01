@@ -8,7 +8,7 @@ In order to install this library you need to obtain an `SSH code`
 
 Use pip to install this library from Github:
 
-    pip install git+ssh://git@github.com/mo-sij/sharepoint-con.git
+    pip install sharepointing
 
 ## Requirements
 First you need to initialize the the sharepoint connection, which is an object.
@@ -21,11 +21,11 @@ You have two options, either use embedded credentials in environment variables:
 
 Then you can use this call:
 
-    sp = sp_folder(site_url)
+    sp = sharepointing.sp_site(site_url)
 
 The second option is to provide the credentials in the class call:
 
-    sp = sp_folder(site_url,username,password)
+    sp = sharepointing.sp_site(site_url,username,password)
 
 Once the object is created successfully, you can call use `send_file` method to upload the files to sharepoiont
 
@@ -33,5 +33,5 @@ Once the object is created successfully, you can call use `send_file` method to 
     site_url = "https://insongosafety.sharepoint.com/teams/TechnologyInnovation"
     target = "/teams/TechnologyInnovation/Shared Documents/General/Information Management/99. Resources/01. Executive Dashboard data"
     file = '1.txt'
-    sp = sp_folder(site_url)
+    sp = sharepointing.sp_site(site_url)
     sp.send_file(file,target)
