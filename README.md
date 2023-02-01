@@ -30,8 +30,8 @@ The second option is to provide the credentials in the class call:
 Once the object is created successfully, you can call use `send_file` method to upload the files to sharepoiont
 
 ## Example
-    site_url = "https://insongosafety.sharepoint.com/teams/TechnologyInnovation"
-    target = "/teams/TechnologyInnovation/Shared Documents/General/Information Management/99. Resources/01. Executive Dashboard data"
-    file = '1.txt'
+    site_url = "https://companysite.sharepoint.com/teams/teamsname"
+    target = "/teams/teamsname/Shared Documents/General/"
+    file = 'file.txt'
     sp = sharepointing.sp_site(site_url)
     sp.send_file(file,target)
