@@ -3,7 +3,7 @@ import ntpath
 from office365.runtime.auth.user_credential import UserCredential
 from office365.sharepoint.client_context import ClientContext
 
-class sp_folder:
+class sp_site:
 
     def __init__(self,site_url,username=os.environ.get('USERNAME'),password=os.environ.get('PASSWORD')):
         """
