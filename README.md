@@ -1,4 +1,4 @@
-# Upload to SharePoint
+# Sharepoint-con
 A library to establish connection to sharepoint. Then operate on this connection. Right now it's only possible to upload files.
 
 This library depends on office 365 library, and it will use active directory authentication to connect to SharePoint.
@@ -8,7 +8,7 @@ In order to install this library you need to obtain an `SSH code`
 
 Use pip to install this library from Github:
 
-    pip install git+ssh://git@github.com/mo-sij-inso/sharepoint_upload.git
+    pip install git+ssh://git@github.com/mo-sij/sharepoint-con.git
 
 ## Requirements
 First you need to initialize the the sharepoint connection, which is an object.
