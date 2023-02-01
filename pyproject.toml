@@ -1,7 +1,6 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0","Office365-REST-Python-Client>=2.3.16"]
 build-backend = "setuptools.build_meta"
-install-requires = ["Office365-REST-Python-Client>=2.3.16"]
 
 [project]
 name = "sharepointing"
