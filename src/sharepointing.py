@@ -1,5 +1,6 @@
 import os
 import ntpath
+from urllib.parse import unquote
 from office365.runtime.auth.user_credential import UserCredential
 from office365.sharepoint.client_context import ClientContext
 
@@ -65,3 +66,36 @@ class sp_site:
             return True
         except:
             raise Exception("[Error] Could not upload the file, make sure it's not read-only and you have proper")
+
+def decode_link(full_link,option) -> str:
+    """
+    This function will take any full link from SharePoint and can give back two two options
+    1 > The site_url
+    2 > The target folder
+    3 > Both as list
+    Instructions: Using your browser, open your SharePoint site and navigate to the target folder
+    Copy the link from the browser, and provide it here.
+    """
+    # Decode url
+    url = unquote(full_link)
+
+    # Find the end of the site's url 
+    l1 = url.find('/Forms/AllItems.aspx?')
+    path = url[:l1].split('/')
+
+    # Extract the site's url
+    site_url = '/'.join(path[0:len(path)-1])
+
+    # Find the actual folder path within the site/library
+    l1 = url.find('?id=')+4
+    l2 = url.find('&viewid')
+
+    # Extract the target folder
+    target_folder = url[l1:l2]
+
+    if option==1:
+        return site_url
+    elif option==2:
+        return target_folder
+    else:
+        return site_url,target_folder
