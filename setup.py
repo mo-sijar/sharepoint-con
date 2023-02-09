@@ -3,7 +3,7 @@
 import setuptools
 
 setuptools.setup(name='sharepointing',
-      version='0.2.1',
+      version='0.2.2',
       description='A package to establish a connection to SharePoint site, and upload files through that connection',
       author='Mo Sijarrey',
       author_email='mo.sijar@gmail.com',

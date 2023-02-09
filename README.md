@@ -1,7 +1,7 @@
 # Sharepointing
 A library to establish connection to sharepoint. Then operate on this connection. Right now it's only possible to upload files.
 
-This library depends on office 365 library, and it will use active directory authentication to connect to SharePoint.
+This library depends on office 365 library: `Office365-REST-Python-Client`, and it will use active directory authentication to connect to SharePoint.
 
 ## Installation
 In order to install this library you need to obtain an `SSH code`
