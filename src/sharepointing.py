@@ -105,13 +105,19 @@ def decode_link(full_link,option) -> str:
 
     # Find the end of the site's url 
     l1 = url.find('/Forms/AllItems.aspx?')
-    path = url[:l1].split('/')
 
+    # In case the link has Standard.aspx instead of AllItems.aspx
+    if l1<=10:
+        l1 = url.find('/Forms/Standard.aspx?')
+    path = url[:l1].split('/')
+    
     # Extract the site's url
     site_url = '/'.join(path[0:len(path)-1])
 
     # Find the actual folder path within the site/library
     l1 = url.find('?id=')+4
+
+    # In case the link has RootFolder instead of id
     if l1<len(site_url)/2:
         l1 = url.find('?RootFolder=')+12
 
