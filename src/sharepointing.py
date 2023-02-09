@@ -112,7 +112,12 @@ def decode_link(full_link,option) -> str:
 
     # Find the actual folder path within the site/library
     l1 = url.find('?id=')+4
+    if l1<len(site_url)/2:
+        l1 = url.find('?RootFolder=')+12
+
     l2 = url.find('&viewid')
+    if l2<=l1:
+        l2=len(url)
 
     # Extract the target folder
     target_folder = url[l1:l2]
